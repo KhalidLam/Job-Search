@@ -1,7 +1,7 @@
 import React from "react";
 import FilterRow from "./FilterRow";
 
-const JobFilter = () => {
+const Filter = () => {
   return (
     <div className='search-type'>
       {/* Alert */}
@@ -43,7 +43,7 @@ const JobFilter = () => {
   );
 };
 
-export default JobFilter;
+export default Filter;
 
 const employment = [
   {

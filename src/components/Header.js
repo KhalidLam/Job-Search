@@ -1,11 +1,26 @@
 import React from "react";
 
-function Header({headerClass}) {
-  // const [headerClass, setHeaderClass] = useState("header");
+function Header({ headerClass }) {
+  const changeMode = () => {
+    document.body.classList.toggle("dark-mode");
+  };
+
+  const handleLogoClick = () => {
+    console.log('logo clicked..');
+    // logo.addEventListener("click", () => {
+    //   wrapper.classList.remove("detail-page");
+    //   wrapper.scrollTop = 0;
+    //   jobBg.style.background = bg;
+    // });
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.classList.remove("detail-page");
+
+    // TO change later !! dont use querySelector
+  }
 
   return (
     <div className={headerClass}>
-      <div className='logo'>
+      <div className='logo' onClick={handleLogoClick}>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
           <path
             xmlns='http://www.w3.org/2000/svg'
@@ -38,7 +53,7 @@ function Header({headerClass}) {
       </div>
 
       <div className='user-settings'>
-        <div className='dark-light'>
+        <div className='dark-light' onClick={changeMode}>
           <svg
             viewBox='0 0 24 24'
             stroke='currentColor'
@@ -77,5 +92,3 @@ function Header({headerClass}) {
 }
 
 export default Header;
-
-

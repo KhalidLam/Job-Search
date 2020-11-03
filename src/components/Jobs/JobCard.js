@@ -1,8 +1,8 @@
 import React from "react";
 
-const JobCard = ({ job: { title, subtitle, tags } }) => {
+const JobCard = ({ job: { title, subtitle, tags }, handleJobClick }) => {
   return (
-    <div className='job-card'>
+    <div className='job-card' onClick={() => handleJobClick("#2e2882", title)}>
       <div className='job-card-header'>
         <svg
           viewBox='0 -13 512 512'

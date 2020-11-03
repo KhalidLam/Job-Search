@@ -7,6 +7,9 @@ class App extends Component {
     super(props);
     this.state = {
       headerClass: "header",
+      jobBg: "",
+      jobDetailTitle: "",
+      detailPage: false,
     };
   }
 
@@ -20,11 +23,16 @@ class App extends Component {
     this.setState({ headerClass: classList });
   };
 
+  handleJobClick = (bg, title) => {
+    console.log(this.state.detailPage);
+    this.setState({ detailPage: !this.state.detailPage, jobBg: bg, jobDetailTitle: title });
+  };
+
   render() {
     return (
       <div className='job'>
         <Header headerClass={this.state.headerClass} />
-        <Main />
+        <Main handleJobClick={this.handleJobClick} detailPage={this.state.detailPage} jobBg={this.state.jobBg} />
       </div>
     );
   }
